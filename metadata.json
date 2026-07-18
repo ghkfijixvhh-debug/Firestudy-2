@@ -1,0 +1,6 @@
+{
+  "name": "FireStudy",
+  "description": "Ignite Your Learning Journey. Premium online learning platform featuring smooth animations, course tracks, student dashboard, interactive quiz, and an AI study assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

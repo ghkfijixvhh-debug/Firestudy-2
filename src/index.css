@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: #0D0D0D;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+:root {
+  --fire-primary: #FF4D00;
+  --fire-secondary: #FF9800;
+  --bg-dark: #0D0D0D;
+  --surface: #1A1A1A;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-glow: rgba(255, 77, 0, 0.15);
+}
+
+/* Global Frosted Glass Overrides */
+.bg-surface {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.border-orange-500\/10,
+.border-orange-500\/5,
+.border-orange-500\/15 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Light Theme overrides when toggled in settings */
+.light-theme {
+  background-color: #f7f9fc !important;
+  color: #1a1a1a !important;
+}
+
+.light-theme .bg-surface {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light-theme .text-white-toggle {
+  color: #1a1a1a !important;
+}
+
+.light-theme .text-gray-toggle {
+  color: #4a5568 !important;
+}
+
+.light-theme .border-dark-toggle {
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme .bg-dark-accent {
+  background-color: #edf2f7 !important;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.light-theme .glass-panel {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Glowing text effects */
+.glow-text-orange {
+  text-shadow: 0 0 12px rgba(255, 77, 0, 0.6);
+}
+
+.glow-border {
+  box-shadow: 0 0 15px rgba(255, 77, 0, 0.15);
+}
+
+/* WebKit scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: #f7f9fc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF4D00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF9800;
+}
+
+/* Custom animated gradient backgrounds */
+@keyframes flameFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-flame-bg {
+  background: linear-gradient(-45deg, #FF4D00, #FF9800, #9E0000, #1A1A1A);
+  background-size: 400% 400%;
+  animation: flameFlow 15s ease infinite;
+}
+
+/* Keyframes for particles pulsing */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.45;
+  }
+}
+
+.radial-glow-back {
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.18) 0%, rgba(0,0,0,0) 70%);
+  animation: pulseGlow 8s ease-in-out infinite;
+}
